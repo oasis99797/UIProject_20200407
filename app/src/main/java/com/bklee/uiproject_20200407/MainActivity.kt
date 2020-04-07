@@ -18,7 +18,11 @@ class MainActivity : AppCompatActivity() {
 
             val inputEmail = emailEdt.text.toString()
 
-            Toast.makeText(this, inputEmail, Toast.LENGTH_SHORT).show()
+            // 입력한 아이디는 ***입니다.
+
+            var formattedStr = "입력한 아이디는 ${inputEmail} 입니다"
+
+            Toast.makeText(this, formattedStr, Toast.LENGTH_SHORT).show()
 
         }
 
