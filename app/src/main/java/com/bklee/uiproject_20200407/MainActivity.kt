@@ -17,16 +17,28 @@ class MainActivity : AppCompatActivity() {
             Log.d("로그인버튼","버튼 클릭됨")
 
             val inputEmail = emailEdt.text.toString()
-
-            // 입력한 아이디는 ***입니다.
-
             var formattedStr = "입력한 아이디는 ${inputEmail} 입니다"
-
-            Toast.makeText(this, formattedStr, Toast.LENGTH_SHORT).show()
-
+/*
+            if( inputEmail == "oasis99797") {
+                Toast.makeText(this, "관리자입니다", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, formattedStr, Toast.LENGTH_SHORT).show()
+            }
+*/
+            when(inputEmail) {
+                "oasis99797" -> { Toast.makeText(this, "관리자입니다", Toast.LENGTH_SHORT).show() }
+                "student" -> { Toast.makeText(this, "학생입니다", Toast.LENGTH_SHORT).show() }
+                "parent" -> { Toast.makeText(this, "학부모입니다", Toast.LENGTH_SHORT).show() }
+                "teacher" -> { Toast.makeText(this, "선생님입니다", Toast.LENGTH_SHORT).show() }
+                else -> { Toast.makeText(this, formattedStr, Toast.LENGTH_SHORT).show() }
+            }
         }
 
         loginBtn.setOnLongClickListener {
+
+            for(i in 0..5) {
+                Log.d("for문 연습","${i}")
+            }
 
             Log.d("로그인버튼","버튼 길게 누름")
             return@setOnLongClickListener true
