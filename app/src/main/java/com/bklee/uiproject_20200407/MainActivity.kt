@@ -16,11 +16,14 @@ class MainActivity : AppCompatActivity() {
             // 로그인 버튼이 눌리면 할 일을 지정
             Log.d("로그인버튼","버튼 클릭됨")
 
-            Toast.makeText(this, "로그인 버튼 눌림", Toast.LENGTH_SHORT).show()
+            val inputEmail = emailEdt.text.toString()
+
+            Toast.makeText(this, inputEmail, Toast.LENGTH_SHORT).show()
 
         }
 
         loginBtn.setOnLongClickListener {
+
             Log.d("로그인버튼","버튼 길게 누름")
             return@setOnLongClickListener true
 
